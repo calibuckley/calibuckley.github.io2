@@ -1,0 +1,154 @@
+---
+layout: default
+title: TuneSync - Personalized Playlist Generator
+description: Your personalized playlist generator powered by your unique music taste
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/tunesync.css' | relative_url }}">
+
+<div class="tunesync-app">
+    <div class="container">
+        <div class="header">
+            <h1>🎵 TuneSync</h1>
+            <p>Your personalized playlist generator powered by your unique music taste</p>
+        </div>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>🎯 Your Music Preferences</h2>
+                
+                <div class="form-group">
+                    <label for="favoriteArtists">Favorite Artists (comma separated):</label>
+                    <textarea id="favoriteArtists" placeholder="e.g. Taylor Swift, The Weeknd, Billie Eilish, Arctic Monkeys"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="topGenres">Preferred Genres:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="pop" value="Pop">
+                            <label for="pop">Pop</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="rock" value="Rock">
+                            <label for="rock">Rock</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hiphop" value="Hip-Hop">
+                            <label for="hiphop">Hip-Hop</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="electronic" value="Electronic">
+                            <label for="electronic">Electronic</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="indie" value="Indie">
+                            <label for="indie">Indie</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="jazz" value="Jazz">
+                            <label for="jazz">Jazz</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="classical" value="Classical">
+                            <label for="classical">Classical</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="rnb" value="R&B">
+                            <label for="rnb">R&B</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="musicAesthetic">Music Aesthetic/Vibe:</label>
+                    <select id="musicAesthetic">
+                        <option value="chill">Chill & Relaxed</option>
+                        <option value="energetic">Energetic & Upbeat</option>
+                        <option value="nostalgic">Nostalgic & Emotional</option>
+                        <option value="dreamy">Dreamy & Atmospheric</option>
+                        <option value="dark">Dark & Moody</option>
+                        <option value="happy">Happy & Positive</option>
+                        <option value="focused">Focused & Ambient</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>⚙️ Playlist Settings</h2>
+                
+                <div class="form-group">
+                    <label for="playlistName">Playlist Name:</label>
+                    <input type="text" id="playlistName" placeholder="My Perfect Mix">
+                </div>
+
+                <div class="slider-group">
+                    <label>Playlist Length: <span id="lengthValue">20</span> songs</label>
+                    <input type="range" id="playlistLength" class="slider" min="10" max="50" value="20">
+                </div>
+
+                <div class="slider-group">
+                    <label>Discovery vs Familiarity: <span id="discoveryValue">Balanced</span></label>
+                    <input type="range" id="discoveryLevel" class="slider" min="0" max="100" value="50">
+                </div>
+
+                <div class="slider-group">
+                    <label>Energy Level: <span id="energyValue">Medium</span></label>
+                    <input type="range" id="energyLevel" class="slider" min="0" max="100" value="50">
+                </div>
+
+                <div class="form-group">
+                    <label for="playlistTheme">Playlist Theme:</label>
+                    <select id="playlistTheme">
+                        <option value="general">General Listening</option>
+                        <option value="workout">Workout</option>
+                        <option value="study">Study/Focus</option>
+                        <option value="party">Party</option>
+                        <option value="roadtrip">Road Trip</option>
+                        <option value="sleep">Sleep/Relaxation</option>
+                        <option value="morning">Morning Motivation</option>
+                    </select>
+                </div>
+
+                <button class="generate-btn" onclick="generatePlaylist()">
+                    🎵 Generate My Playlist
+                </button>
+            </div>
+        </div>
+
+        <div id="playlistResult" class="hidden">
+            <div id="loadingState" class="loading hidden">
+                <div class="loading-spinner"></div>
+                <p>Crafting your perfect playlist...</p>
+            </div>
+
+            <div id="playlistContent" class="playlist-display hidden">
+                <div class="playlist-header">
+                    <h3 id="generatedPlaylistName">Your Perfect Mix</h3>
+                    <div class="playlist-stats">
+                        <span id="songCount">20 songs</span>
+                        <span id="totalDuration">1h 23m</span>
+                    </div>
+                </div>
+
+                <div class="taste-profile">
+                    <h4>Your Music Taste Profile</h4>
+                    <div class="taste-tags" id="tasteTags"></div>
+                </div>
+
+                <div id="songList" class="song-list">
+                    <!-- Songs will be dynamically added here -->
+                </div>
+
+                <div class="playlist-actions">
+                    <button class="action-btn" onclick="regeneratePlaylist()">🔄 Regenerate</button>
+                    <button class="action-btn" onclick="savePlaylist()">💾 Save Playlist</button>
+                    <button class="action-btn" onclick="sharePlaylist()">📤 Share</button>
+                    <button class="action-btn" onclick="exportPlaylist()">📋 Export</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ '/assets/js/tunesync.js' | relative_url }}"></script>
