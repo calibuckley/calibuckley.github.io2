@@ -1,0 +1,366 @@
+/* TuneSync Playlist Generator - Jekyll Theme Compatible CSS */
+
+/* Scope all styles to avoid conflicts with Jekyll theme */
+.tunesync-app {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #fff;
+    margin: -20px -20px 0 -20px; /* Override Jekyll theme margins */
+    padding: 0;
+}
+
+.tunesync-app * {
+    box-sizing: border-box;
+}
+
+.tunesync-app .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tunesync-app .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.tunesync-app .header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border: none; /* Override Jekyll theme borders */
+}
+
+.tunesync-app .header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: #fff;
+}
+
+.tunesync-app .main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .tunesync-app .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .tunesync-app {
+        margin: -10px -10px 0 -10px;
+    }
+    
+    .tunesync-app .header h1 {
+        font-size: 2rem;
+    }
+}
+
+.tunesync-app .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tunesync-app .card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+    border: none; /* Override Jekyll theme */
+    padding: 0;
+}
+
+.tunesync-app .form-group {
+    margin-bottom: 20px;
+}
+
+.tunesync-app .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tunesync-app .form-group input,
+.tunesync-app .form-group select,
+.tunesync-app .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.tunesync-app .form-group input::placeholder,
+.tunesync-app .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.tunesync-app .form-group select option {
+    background: #333;
+    color: #fff;
+}
+
+.tunesync-app .checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tunesync-app .checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tunesync-app .checkbox-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tunesync-app .checkbox-item input[type="checkbox"] {
+    width: auto !important;
+    margin-right: 8px;
+    accent-color: #ff6b6b;
+}
+
+.tunesync-app .checkbox-item label {
+    margin: 0;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.tunesync-app .slider-group {
+    margin: 20px 0;
+}
+
+.tunesync-app .slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.tunesync-app .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    cursor: pointer;
+}
+
+.tunesync-app .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    cursor: pointer;
+    border: none;
+}
+
+.tunesync-app .generate-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+    font-family: inherit;
+}
+
+.tunesync-app .generate-btn:hover {
+    transform: translateY(-2px);
+}
+
+.tunesync-app .playlist-display {
+    margin-top: 40px;
+}
+
+.tunesync-app .playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tunesync-app .playlist-header h3 {
+    font-size: 1.8rem;
+    color: #4ecdc4;
+    margin: 0;
+}
+
+.tunesync-app .playlist-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.tunesync-app .song-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.tunesync-app .song-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.tunesync-app .song-info h4 {
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.tunesync-app .song-info p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.tunesync-app .song-duration {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.tunesync-app .playlist-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.tunesync-app .action-btn {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.tunesync-app .action-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.tunesync-app .hidden {
+    display: none;
+}
+
+.tunesync-app .loading {
+    text-align: center;
+    padding: 40px;
+}
+
+.tunesync-app .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #ff6b6b;
+    border-radius: 50%;
+    animation: tunesync-spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes tunesync-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.tunesync-app .taste-profile {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.tunesync-app .taste-profile h4 {
+    color: #4ecdc4;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.tunesync-app .taste-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tunesync-app .taste-tag {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Override any Jekyll theme link styles within our app */
+.tunesync-app a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.tunesync-app a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Ensure proper text color inheritance */
+.tunesync-app h1,
+.tunesync-app h2,
+.tunesync-app h3,
+.tunesync-app h4,
+.tunesync-app h5,
+.tunesync-app h6,
+.tunesync-app p,
+.tunesync-app span,
+.tunesync-app div,
+.tunesync-app label {
+    color: inherit;
+}
+
+/* Dark mode compatibility for Jekyll themes */
+@media (prefers-color-scheme: dark) {
+    .tunesync-app .form-group select option {
+        background: #222;
+        color: #fff;
+    }
+}
